@@ -1,0 +1,21 @@
+%flex {
+  display: flex;
+  margin: 2em;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+%flex_item {
+  margin: 1em;
+  // flex-grow: 1;
+  &.start {
+    width: 100%;
+  }
+}
+
+.aruba_flex {
+  @extend %flex;
+  > div {
+    @extend %flex_item;
+  }
+}

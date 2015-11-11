@@ -1,0 +1,16 @@
+%panel {
+    background: #ecfaff;
+    border: #d8d8d8 solid 1px;
+    color: #333333;
+    margin-bottom: 1.25rem;
+    padding: 1.25rem;
+    width: 100%;
+    p:only-child {
+      margin: 0;
+      font-size: 1.2em;
+    }
+}
+
+.aruba_panel {
+  @extend %panel;
+}

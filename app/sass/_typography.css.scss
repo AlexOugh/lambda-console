@@ -1,0 +1,78 @@
+h1 {
+ color: #494949;
+ font-size: 36px;
+ font-weight: 500;
+ margin: 15px 0 0;
+}
+h2 {
+ color: #4a4a4a;
+ font-size: 22px;
+ font-weight: 500;
+ margin: 15px 0 0;
+}
+h3 {
+  color: #494949;
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 0.4px;
+  margin: 15px 0 0;
+}
+h4 {
+  color: #494949;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  margin: 15px 0 0;
+}
+h5 {
+  color: #7c7c7c;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 0.3px;
+  margin: 15px 0 0;
+}
+h6 {
+  color: #7c7c7c;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  margin: 15px 0 0;
+}
+
+// Text styles
+strong  {
+  color: #000;
+}
+b {
+  @extend strong;
+}
+#aside b {
+  color: #fff;
+}
+small {
+  @include opacity(80);
+  font-size: .8em; 
+}
+
+// Links
+a {
+  color: lighten($primary,17%); 
+  outline: none; 
+  border: none; 
+  text-decoration: none !important;
+  &:hover {
+    color: darken($primary, 15%);
+  }
+  img {
+    border: none; 
+    outline: none;
+  }
+  &.inactive {
+    @include opacity(40); 
+    cursor: default; 
+    color: #666;
+    &:hover { 
+      color: #666;
+    }
+  }
+}

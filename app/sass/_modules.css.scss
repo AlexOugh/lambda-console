@@ -1,0 +1,60 @@
+.module_container {
+  @include corners(3px);
+  background-color: #fff;
+  border: 1px solid #dedede;
+  margin: 15px 0 0 0;
+  table.aruba_grid {
+    border: none;
+  }
+}
+
+.module_header {
+  @extend %corner_t; // sill: corner top default radius is 3px
+  background-color: #666666;
+  color: #ffffff;
+  padding: 11px 13px 11px 18px;
+  border-bottom: 1px solid #dedede;
+  position: relative;
+  .actions, .add {
+    position: absolute;
+    right: 14px;
+    top: 7px;
+  }
+  .add, .plus, .go, .minus {
+    display: inline-block;
+    color: #ddd;
+    font-size: 20px;
+    padding: 4px; // for ease of clicking
+    &.minus {
+      margin-top: -2px;
+    }
+    &:hover {
+      color: #fff;
+    }
+  }
+  .go {
+    font-size: 24px;
+    margin-left: 5px;
+  }
+}
+
+.module_content {
+  padding: 2em;
+  .aruba_flex {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+#aside {
+  .module_container, .module_header {
+    background: transparent;
+    border: none;
+  }
+  .module_header {
+    font-size: 1.2em;
+  }
+  .module_content {
+    padding-top: 1em;
+  }
+}

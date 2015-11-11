@@ -1,0 +1,89 @@
+#logo {
+    text-indent: -9999em;
+    display: block;
+    height: 46px; 
+    font-size: 0em;
+    width: 46;
+    // background: url('sas_logo.png') no-repeat 50% 50%; width: 47px;
+    background: rgba(0,0,0,0) url('../images/sas_logo.svg') no-repeat 50% 50%; width: 47px;
+    background-size: auto 30px;
+  }
+
+
+#header {
+  // target right buttons
+  .buttons {
+    @include layer($left: auto, $bottom: auto, $height: 46px);
+    display: table;
+    overflow: visible;
+    // user buttons
+    > * {
+      display: table-cell; 
+      width: 64px;
+      > span { 
+        position: relative; 
+        display: block; 
+        height: 46px;
+        // button drop downs
+        &:hover ul { 
+          display:block;
+        }
+        > a {
+          height: 100%; 
+          display: block;
+          &:before { 
+            @extend %sprites;
+          }
+        }
+      }     
+      &.user > span > a:before {
+        @include icon(1,6,$icon);
+      }
+      &.settings{
+        > span > a:before { 
+          @include icon(1,4,$icon);
+        }
+      }
+      &.help > span { 
+        cursor: pointer;
+        > a:before { 
+          @include icon(1,8,$icon);
+        }
+      } 
+    }
+  }
+}
+
+// button dropdowns
+.buttons {
+  > div {
+    ul {
+      @include layer($top: 100%, $right: 100%, $left: auto, $bottom: auto);
+      @include corner(bottom,left,0.5em);
+      @include corner(bottom,right,0.5em); 
+      @include shadow(#595959,0,23px); 
+      @extend %clip;
+      height: auto !important;
+      display: none;
+      background: rgba(0, 0, 0, 0.90); 
+      padding: 0.5em 1em; 
+      z-index: 10000; 
+      margin: 0 -64px 0 0;
+      li {
+        list-style: none; 
+        padding-bottom: 0.3em; 
+        white-space: nowrap;
+        text-align: right;
+        font-size: 13px;
+        line-height: 1.3em;
+        a {
+          background: none; 
+          color: lighten($primary,40%);
+          &:before {
+            background: none;
+          }
+        }
+      }
+    }
+  }
+}

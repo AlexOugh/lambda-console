@@ -1,0 +1,82 @@
+// tables requires sill: corners,
+$radius: 3px;
+
+%grid {
+  clear: both;
+  border-spacing: 0; 
+  width: 100%;
+  border-collapse: separate;
+  background-color: #fff;
+  color:  #5e5e5e;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+//  table-layout: fixed;
+  @extend %corner_t; // sill: corner top default radius is 3px
+  * {
+   outline: none;
+  }
+  td, th {
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding: 12px 10px 13px; 
+    white-space: nowrap;
+    &.first-child {
+      border-left: none;
+    }
+    &.center {
+      text-align: center;
+    }
+  }
+  tr:first-child th {
+    border-top: none;
+  }
+  tbody tr:nth-child(even) {
+    background: #f6f6f6;
+  }
+  tbody tr:hover {
+    background: #ddd;
+  }
+  thead {
+    background-color: #f6f6f6;
+    color: #333;
+    font-size: 13px;
+    td, th {
+      whitespace: nowrap;
+      text-align: left;
+      &:first-child {
+      }
+      &:last-child {
+      }
+      &:only-child {
+      }
+    }
+    
+  }
+  tfoot {
+    td {
+      background-color: desaturate($secondary,20%);
+      border-bottom: 0 none;
+    }
+  }
+  .no-results {
+    text-align:center;
+  }
+  tbody td.delete, thead th.delete {
+    width: 1%;
+    font-size: 20px;
+    border-left-style: none;
+    text-align: left;
+  }
+}
+
+
+
+table.grid th[class~="sorting"], 
+table.grid th[aria-sort] {
+  padding-right: 1.75em;
+  &:hover { background-color: lighten($secondary,5%);}
+}
+
+table.aruba_grid {
+  @extend %grid;
+}

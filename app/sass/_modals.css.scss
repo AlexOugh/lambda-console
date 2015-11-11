@@ -1,0 +1,14 @@
+.reveal-modal {
+    display: none;
+    position: absolute;
+    left: 0;
+    margin: 0 auto;
+    max-width: 55.5556rem;
+    right: 0;
+    width: 80%;
+  }
+
+  .reveal-modal-bg {
+    @extend %overlay;
+    @extend %faded-black;
+  }

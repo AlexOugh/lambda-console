@@ -1,0 +1,48 @@
+// for shared rules
+%_aside {
+  display: none; // fading in after js init
+  @include layer($top: 48px, $right: auto, $bottom: 33px, $index: 1, $width: 22%);
+  color: #ddd; 
+  overflow: auto; 
+  background: #494949;
+  > h2, >h3, > p { padding-left: $m; }
+}
+
+%_section {
+  display: none; // fading in after js init
+  @include layer($top: 48px, $right: 0, $left: 22%, $bottom: 33px, $index: 1 );
+  padding: 2em; 
+  overflow: auto;
+}
+
+%_header {
+  @include layer($bottom: auto, $height: 48px, $index: 999);
+  position: fixed; 
+  background: #3b3b3b; 
+  color: #fff;
+  overflow: visible;
+}
+
+%_footer {
+  @include layer($top: auto, $index: 2, $height: 33px);
+  position: fixed; 
+  background: #3b3b3b;
+  font-size: 11px; 
+  padding: 1em;
+  a {
+    color: #fff;
+  }
+  b {
+    color: #fff; 
+    font-weight: 900;
+  }
+  em {
+    display: inline-block; 
+    padding: 0 1em; 
+    color: rgb(150,150,150); 
+    color: rgba(255,255,255,0.2);
+  }
+  > div {
+    margin-top: -3px;
+  }
+}

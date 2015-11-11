@@ -1,0 +1,52 @@
+.aruba_tag {
+    input, select, textarea {
+        background-color: #f9f9f9;
+        border: 1px solid #d4d4d4;
+        border-radius: 3px;
+        color: #7c7c7c;
+        font-size: 16px;
+        letter-spacing: 0.4px;
+        margin: 7px 0 0;
+        min-width: 300px;
+        padding: 8px 10px 7px;
+        width: 310px;
+    }
+    
+    textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    button {
+        background: #319f5e none repeat scroll 0 0;
+        border-radius: 3px;
+        color: #fff;
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        height: 35px;
+        letter-spacing: 0.2px;
+        width: 100px;
+        border: none;
+        outline: none;
+        &.large {
+            font-size: 25px;
+            height: 75px;
+            letter-spacing: 0.5px;
+            width: 187px;
+        }
+        &.tertiary {
+            background: #c3c3c3;
+        }
+        &.inline {
+            display: inline-block;
+            margin-left: 1em;
+        }
+        &[disabled], &[disabled]:hover {
+            opacity: 0.45 !important;
+            pointer-events: none;
+            cursor: default;
+
+        }
+    }
+}

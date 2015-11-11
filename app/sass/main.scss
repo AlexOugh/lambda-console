@@ -1,0 +1,52 @@
+@import "../../bower_components/foundation/scss/normalize.scss";
+@import "../../lib/stylesheets/sill/main.css.scss";   // https://bitbucket.org/brent_stees/sill/overview
+                                                      // git checkout 27da12b
+// @import "../../bower_components/foundation/scss/foundation.scss";
+@import "../../bower_components/foundation/scss/foundation/components/reveal"; // only need reveal from foundation
+
+// Variables
+
+$text      : #85878c;  // body text color
+$primary     : #263f66;  // primary color used in ui elements
+$secondary  : #85878c; // secondary color used in ui elements
+$core      : #997758;  // core color used in ui elements
+$m       : 12px;   // body text size, used for base of most measurements
+$icon      : 16px;   // grid unit size for sprite file
+$font     : Arial, Helvetica, sans-serif;
+$hfont     : $font;
+
+body {
+  /* No special fonts from files */
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: 300;
+   font-size: 80%;
+   color: $text;
+   background: #e8ebe8;
+   padding: 0;
+   margin: 0;
+   line-height: 1.3em;
+}
+
+// move
+
+/* Icon Position: column, row, tile size */
+@mixin icon($c,$r,$icon) {
+  background-position: (0 - ($icon * ($c - 1))) (0 - ($icon * ($r - 1)));
+}
+
+@import "layout.css.scss";
+@import "header.css.scss";
+@import "nav.css.scss";
+@import "_tables.css.scss";
+@import "_tags.css.scss";
+@import "_typography.css.scss";
+@import "_modules.css.scss";
+@import "_flex.css.scss";
+@import "_forms.css.scss";
+@import "_panels.css.scss";
+@import "_modals.css.scss";
+@import "switch.css.scss";
+
+#section > div {
+  padding-bottom: 2em;
+}
