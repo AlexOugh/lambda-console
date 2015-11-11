@@ -2,22 +2,24 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  //'msawsBase',
-  'layouts/app'
-  //'modules/aws_account/module'
+  'baseApp',
+  'layouts/app',
+  'modules/default/module',
+  'modules/_sample/module'
 ],
 function(
   $,
   underscore,
   Backbone,
-  //MsawsBase,
-  AppLayout
-  //AwsAccountModule,
+  BaseApp,
+  AppLayout,
+  DefaultsModule,
+  _SampleModule
 ) {
 
 
 
-  /*var apiUrl = MsawsBase.config.apiUrl;
+  /*var apiUrl = BaseApp.config.apiUrl;
 
   // var authLoginUrl = apiUrl+'/auth/sgas-unifiedsso-openidconnect?next='+window.location.href+window.location.hash;
   var authLoginUrl = apiUrl+'/auth/sgas-unifiedsso-openidconnect?next='+window.location.href;*/
@@ -41,12 +43,12 @@ function(
       403: function(jqXHR) {
         if (jqXHR.responseJSON && jqXHR.responseJSON.message) {
           if (jqXHR.responseJSON.message == "authentication required") {
-            window.location.href = authLoginUrl;
+            //window.location.href = authLoginUrl;
           }
         }
       },
       401: function() {
-        //var apiUrl = MsawsBase.config.apiUrl;
+        //var apiUrl = BaseApp.config.apiUrl;
         //window.location.href = authLoginUrl;
       },
       503: function() {
@@ -66,7 +68,7 @@ function(
   });
 
   App.module("defaults",DefaultsModule);
-  //App.module("AwsAccount",AwsAccountModule);
+  App.module("_Sample",_SampleModule);
 
   App.on('before:start',function() {
     $(document).foundation();

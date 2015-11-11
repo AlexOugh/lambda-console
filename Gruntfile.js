@@ -113,7 +113,7 @@ module.exports = function(grunt) {
       dist: {
         dest: "build/config.json",
         options: {
-          //apiUrl: config.get('apiUrl'),
+          apiUrl: config.get('apiUrl')
           //sgasAdminRole: config.get('sgasAdminRole')
         }
       }

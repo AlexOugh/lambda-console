@@ -1,5 +1,5 @@
 define([
-  'text!msaws.config.json'
+  'text!config.json'
 ], function(
   configTxt
 ){

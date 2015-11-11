@@ -53,13 +53,13 @@ require.config({
         hbs: '../../bower_components/require-handlebars-plugin/hbs',
 
         text: '../../bower_components/text/text',
-        //'msaws.config': '../../build/msaws.config',
+        'config': '../../build/config',
 
-        //msawsBase: '../scripts/packages/base',
+        baseApp: '../scripts/packages/base',
 
     },
 
-    //packages: ['msawsBase'],
+    packages: ['baseApp'],
 
     hbs: {
         disableI18n: true
