@@ -1,14 +1,14 @@
 define([
   'baseApp',
-  '../models/_sample'
+  '../models/lambda'
 ], function(
   BaseApp,
-  _Sample
+  Lambda
 ) {
 
   return BaseApp.Collection.extend({
-    model: _Sample,
-    urlPath: '/_samples'
+    model: Lambda,
+    urlPath: '/lambdas'
   });
 
 });

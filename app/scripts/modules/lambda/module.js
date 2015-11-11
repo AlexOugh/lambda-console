@@ -15,7 +15,7 @@ function(
     initialize: function(moduleName, app, options) {
       this.app = app;
       this.moduleName = moduleName;
-      this.modulePath = options.modulePath || 'alert';
+      this.modulePath = options.modulePath || 'lambdas';
       this.controller = new Controller({
         app: app,
         module: this

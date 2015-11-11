@@ -1,8 +1,8 @@
 {
-  "name": "ctoConsole",
+  "name": "lambda-console",
   "version": "0.0.0",
   "authors": [
-    "Kevin McGrath <kevin.mcgrath@sungardas.com>"
+    "Alex Ough <alex.ough@sungardas.com>"
   ],
   "license": "MIT",
   "private": true,

@@ -5,7 +5,7 @@ define([
   'baseApp',
   'layouts/app',
   'modules/default/module',
-  'modules/_sample/module'
+  'modules/lambda/module'
 ],
 function(
   $,
@@ -14,7 +14,7 @@ function(
   BaseApp,
   AppLayout,
   DefaultsModule,
-  _SampleModule
+  LambdaModule
 ) {
 
 
@@ -68,7 +68,7 @@ function(
   });
 
   App.module("defaults",DefaultsModule);
-  App.module("_Sample",_SampleModule);
+  App.module("_Sample",LambdaModule);
 
   App.on('before:start',function() {
     $(document).foundation();

@@ -1,8 +1,8 @@
 define([
   'backbone.marionette',
-  '../models/_sample',
+  '../models/lambda',
   '../../default/singletons/session',
-  'hbs!../templates/_sample_list_item'
+  'hbs!../templates/lambda_list_item'
 ], function(
   Marionette,
   Model,

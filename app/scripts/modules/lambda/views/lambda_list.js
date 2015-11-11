@@ -1,7 +1,7 @@
 define([
   'backbone.marionette',
-  './_sample_list_item',
-  'hbs!../templates/_sample_list'
+  './lambda_list_item',
+  'hbs!../templates/lambda_list'
 ], function(
   Marionette,
   ChildView,
