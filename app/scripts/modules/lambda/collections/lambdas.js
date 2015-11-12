@@ -8,7 +8,7 @@ define([
 
   return BaseApp.Collection.extend({
     model: Lambda,
-    urlPath: '/lamdbfs'
+    urlPath: '/lambdas'
   });
 
 });
