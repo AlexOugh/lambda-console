@@ -10,7 +10,7 @@ function(
     },
     routes: {
       '': function() {
-        window.location.hash = '#_samples';
+        window.location.hash = '#lambdas';
       },
       'unavailable': function() {
         alert("Unavailable");

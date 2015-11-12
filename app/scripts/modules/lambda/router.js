@@ -7,7 +7,7 @@ function(
 ) {
   var Router = Marionette.AppRouter.extend({
     appRoutes: {
-      '_samples': 'list'
+      'lambdas': 'list'
     },
     onRoute: function() {
       var controller = this.options.controller;

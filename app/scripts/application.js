@@ -68,7 +68,7 @@ function(
   });
 
   App.module("defaults",DefaultsModule);
-  App.module("_Sample",LambdaModule);
+  App.module("Lambda",LambdaModule);
 
   App.on('before:start',function() {
     $(document).foundation();
