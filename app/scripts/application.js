@@ -19,10 +19,8 @@ function(
 
 
 
-  /*var apiUrl = BaseApp.config.apiUrl;
-
-  // var authLoginUrl = apiUrl+'/auth/sgas-unifiedsso-openidconnect?next='+window.location.href+window.location.hash;
-  var authLoginUrl = apiUrl+'/auth/sgas-unifiedsso-openidconnect?next='+window.location.href;*/
+  var apiUrl = BaseApp.config.apiUrl;
+  //var authLoginUrl = apiUrl+'/auth/sgas-unifiedsso-openidconnect?next='+window.location.href;
 
   $.ajaxSetup({
 
@@ -48,7 +46,6 @@ function(
         }
       },
       401: function() {
-        //var apiUrl = BaseApp.config.apiUrl;
         //window.location.href = authLoginUrl;
       },
       503: function() {
@@ -57,7 +54,10 @@ function(
     },
     crossDomain: true,
     xhrFields: {
-      withCredentials: true
+      withCredentials: false
+    },
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader('x-api-key', BaseApp.config.apiKey);
     }
   });
 

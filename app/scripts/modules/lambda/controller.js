@@ -28,7 +28,7 @@ function(
     },
     onRoute: function() {
       var self = this;
-      this.lambdaCollection.fetch({data:{fedaccount:'', account:'', role:'', extid:'', region:''}});
+      this.lambdaCollection.fetch({data:BaseApp.config.accounts[0]});
       this.lambdaCollection.on('error', function() {
       });
     }
