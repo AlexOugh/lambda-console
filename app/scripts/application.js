@@ -5,6 +5,7 @@ define([
   'baseApp',
   'layouts/app',
   'modules/default/module',
+  'modules/aws_account/module',
   'modules/lambda/module'
 ],
 function(
@@ -14,10 +15,9 @@ function(
   BaseApp,
   AppLayout,
   DefaultsModule,
+  AwsAccountModule,
   LambdaModule
 ) {
-
-
 
   var apiUrl = BaseApp.config.apiUrl;
   //var authLoginUrl = apiUrl+'/auth/sgas-unifiedsso-openidconnect?next='+window.location.href;
@@ -68,6 +68,7 @@ function(
   });
 
   App.module("defaults",DefaultsModule);
+  App.module("AwsAccount",AwsAccountModule);
   App.module("Lambda",LambdaModule);
 
   App.on('before:start',function() {

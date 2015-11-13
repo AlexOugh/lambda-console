@@ -10,7 +10,7 @@ function(
     },
     routes: {
       '': function() {
-        window.location.hash = '#lambdas';
+        window.location.hash = '#aws_accounts';
       },
       'unavailable': function() {
         alert("Unavailable");
