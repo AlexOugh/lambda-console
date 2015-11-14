@@ -13,11 +13,10 @@ define([
     tagName: 'tr',
     template: tmpl,
     session: session,
-    ui: {
-      row: 'tr'
-    },
     modelEvents: {
       'sync': 'render'
+    },
+    ui: {
     },
     events: {
     },

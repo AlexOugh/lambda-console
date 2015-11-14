@@ -8,7 +8,7 @@ define([
 
   return BaseApp.Collection.extend({
     model: AwsAccount,
-    //urlPath: '/aws_accounts',
+    urlPath: undefined
   });
 
 });

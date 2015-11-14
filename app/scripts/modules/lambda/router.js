@@ -7,7 +7,8 @@ function(
 ) {
   var Router = Marionette.AppRouter.extend({
     appRoutes: {
-      'lambdas': 'list'
+      'aws_accounts/:aid/lambdas': 'list',
+      'aws_accounts/:aid/lambdas/:id': 'show'
     },
     onRoute: function() {
       var controller = this.options.controller;

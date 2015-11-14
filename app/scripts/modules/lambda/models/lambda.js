@@ -6,6 +6,6 @@ define([
   BaseApp
 ) {
   return BaseApp.Model.extend({
-    urlPath: '/lambda'
+    urlPath: '/lambdas'
   });
 });

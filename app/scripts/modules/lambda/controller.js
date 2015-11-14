@@ -1,36 +1,72 @@
 define([
-  'baseApp',
+  'jquery',
   'backbone',
+  'baseApp',
+  '../aws_account/models/aws_account',
   './collections/lambdas',
+  './views/lambda_list',
   './models/lambda',
-  './views/lambda_list'
+  './views/lambda_show'
 ],
 function(
-  BaseApp,
+  $,
   Backbone,
-  LambdaCollection,
-  LambdaModel,
-  LambdaListView
+  BaseApp,
+  AwsAccountModel,
+  Collection,
+  LambdaListView,
+  Model,
+  LambdaShowView
 ) {
 
   var Controller = Marionette.Controller.extend({
     initialize: function(options) {
       this.app = options.app;
       this.module = options.module;
+      this.collection = new Collection();
     },
-    list: function() {
-      this.app.appLayout.hideAside();
-      this.lambdaCollection = new LambdaCollection();
-      this.lambdaListView = new LambdaListView({
-        collection: this.lambdaCollection
+    list: function(aid) {
+      var self = this;
+
+      var account = this.findAccount(aid);
+      this.collection.fetch({data:account});
+      this.collection.on('error', function() {
       });
-      this.app.appLayout.section.show(this.lambdaListView);
+      this.collection.on('sync', function() {
+        this.models.forEach(function(model) {
+          model.set('account', account);
+        });
+        self.app.appLayout.hideAside();
+        self.app.appLayout.section.show(new LambdaListView({
+          collection: this
+        }));
+      });
+    },
+    show: function(aid, id) {
+      var self = this;
+      var account = this.findAccount(aid);
+      var model = Model.findOrCreate({id:id});
+      model.fetch({data:account});
+      model.once('sync', function() {
+        model.set('account', account);
+        var view = new LambdaShowView({
+          model: model
+        });
+        self.app.appLayout.showAside();
+        self.app.appLayout.section.show(view);
+      });
     },
     onRoute: function() {
-      var self = this;
-      this.lambdaCollection.fetch({data:BaseApp.config.accounts[0]});
-      this.lambdaCollection.on('error', function() {
+    },
+    findAccount: function(aid) {
+      var account = null;
+      var accounts = BaseApp.config.accounts.filter(function(account) {
+        return account.id === aid;
       });
+      if (accounts[0]) {
+        return accounts[0];
+      }
+      return null;
     }
   });
 
