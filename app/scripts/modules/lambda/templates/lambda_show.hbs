@@ -1,5 +1,4 @@
 <div class="module_container">
-
   <div class="module_header">
     <span>Lambda Function Details</span>
   </div>
@@ -7,13 +6,13 @@
   <div class="aruba_flex aruba_tag">
 
     <div class="row">
-      <div class="small-9 columns">
+      <div class="small-11 columns">
         <div class="row collapse prefix-radius">
           <div class="small-3 columns">
-            <span class="prefix">AWS ID</span>
+            <span class="prefix">FunctionName</span>
           </div>
-          <div class="small-6 columns">
-            <input type="text" value="{{account.account}}" disabled>
+          <div class="small-9 columns">
+            <span>{{Configuration.FunctionName}}</span>
           </div>
           <div class="small-2 columns">
           </div>
@@ -22,41 +21,199 @@
     </div>
 
     <div class="row">
-      <div class="small-9 columns">
+      <div class="small-11 columns">
         <div class="row collapse prefix-radius">
           <div class="small-3 columns">
-            <span class="prefix">Function Name</span>
+            <span class="prefix">FunctionArn</span>
           </div>
-          <div class="small-6 columns">
-            <input name="name" type="text" value="{{Configuration.FunctionName}}" saved="{{Configuration.FunctionName}}" disabled>
+          <div class="small-9 columns">
+            <span>{{Configuration.FunctionArn}}</span>
           </div>
-          <div name="name" class="small-2 columns">
-            <span class="edit"><a href="#"><img src="images/edit-line.png" title="Edit"></a></span>
-            <span class="update" style="display:none"><a href="#"><img src="images/ok-line.png" title="Update"></a></span>
-            &nbsp;&nbsp;<span class="cancel" style="display:none"><a href="#"><img src="images/cancel-line.png" title="Cancel"></a></span>
+          <div class="small-2 columns">
           </div>
         </div>
       </div>
     </div>
 
     <div class="row">
-      <div class="small-9 columns">
+      <div class="small-11 columns">
         <div class="row collapse prefix-radius">
           <div class="small-3 columns">
             <span class="prefix">Description</span>
           </div>
-          <div class="small-6 columns">
-            <input name="description" type="text" value="{{Configuration.Description}}" saved="{{Configuration.Description}}" disabled>
+          <div class="small-9 columns">
+            <span>{{Configuration.Description}}</span>
           </div>
-          <div name="description" class="small-2 columns">
-            <span class="edit"><a href="#"><img src="images/edit-line.png" title="Edit"></a></span>
-            <span class="update" style="display:none"><a href="#"><img src="images/ok-line.png" title="Update"></a></span>
-            &nbsp;&nbsp;<span class="cancel" style="display:none"><a href="#"><img src="images/cancel-line.png" title="Cancel"></a></span>
+          <div class="small-2 columns">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-11 columns">
+        <div class="row collapse prefix-radius">
+          <div class="small-3 columns">
+            <span class="prefix">Role</span>
+          </div>
+          <div class="small-9 columns">
+            <span>{{Configuration.Role}}</span>
+          </div>
+          <div class="small-2 columns">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-11 columns">
+        <div class="row collapse prefix-radius">
+          <div class="small-3 columns">
+            <span class="prefix">Handler</span>
+          </div>
+          <div class="small-9 columns">
+            <span>{{Configuration.Handler}}</span>
+          </div>
+          <div class="small-2 columns">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-11 columns">
+        <div class="row collapse prefix-radius">
+          <div class="small-3 columns">
+            <span class="prefix">Runtime</span>
+          </div>
+          <div class="small-9 columns">
+            <span>{{Configuration.Runtime}}</span>
+          </div>
+          <div class="small-2 columns">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-11 columns">
+        <div class="row collapse prefix-radius">
+          <div class="small-3 columns">
+            <span class="prefix">MemorySize</span>
+          </div>
+          <div class="small-9 columns">
+            <span>{{Configuration.MemorySize}}</span>
+          </div>
+          <div class="small-2 columns">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-11 columns">
+        <div class="row collapse prefix-radius">
+          <div class="small-3 columns">
+            <span class="prefix">Timeout</span>
+          </div>
+          <div class="small-9 columns">
+            <span>{{Configuration.Timeout}}</span>
+          </div>
+          <div class="small-2 columns">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-11 columns">
+        <div class="row collapse prefix-radius">
+          <div class="small-3 columns">
+            <span class="prefix">Version</span>
+          </div>
+          <div class="small-9 columns">
+            <span>{{Configuration.Version}}</span>
+          </div>
+          <div class="small-2 columns">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-11 columns">
+        <div class="row collapse prefix-radius">
+          <div class="small-3 columns">
+            <span class="prefix">LastModified</span>
+          </div>
+          <div class="small-9 columns">
+            <span>{{Configuration.LastModified}}</span>
+          </div>
+          <div class="small-2 columns">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-11 columns">
+        <div class="row collapse prefix-radius">
+          <div class="small-3 columns">
+            <span class="prefix">CodeSize</span>
+          </div>
+          <div class="small-9 columns">
+            <span>{{Configuration.CodeSize}}</span>
+          </div>
+          <div class="small-2 columns">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-11 columns">
+        <div class="row collapse prefix-radius">
+          <div class="small-3 columns">
+            <span class="prefix">CodeSha256</span>
+          </div>
+          <div class="small-9 columns">
+            <span>{{Configuration.CodeSha256}}</span>
+          </div>
+          <div class="small-2 columns">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-11 columns">
+        <div class="row collapse prefix-radius">
+          <div class="small-3 columns">
+            <span class="prefix">RepositoryType</span>
+          </div>
+          <div class="small-9 columns">
+            <span>{{Code.RepositoryType}}</span>
+          </div>
+          <div class="small-2 columns">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-11 columns">
+        <div class="row collapse prefix-radius">
+          <div class="small-3 columns">
+            <span class="prefix">Location</span>
+          </div>
+          <div class="small-9 columns">
+            <span>{{Code.Location}}</span>
+          </div>
+          <div class="small-2 columns">
           </div>
         </div>
       </div>
     </div>
 
   </div>
-
 </div>

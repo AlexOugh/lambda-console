@@ -6,7 +6,8 @@ define([
   './collections/lambdas',
   './views/lambda_list',
   './models/lambda',
-  './views/lambda_show'
+  './views/lambda_show',
+  './views/aside'
 ],
 function(
   $,
@@ -16,7 +17,8 @@ function(
   Collection,
   LambdaListView,
   Model,
-  LambdaShowView
+  LambdaShowView,
+  AsideView
 ) {
 
   var Controller = Marionette.Controller.extend({
@@ -48,6 +50,7 @@ function(
     show: function(aid, id) {
       var self = this;
       var account = this.findAccount(aid);
+
       var model = Model.findOrCreate({id:id});
       model.fetch({data:account});
       model.once('sync', function() {
@@ -58,8 +61,25 @@ function(
         self.app.appLayout.showAside();
         self.app.appLayout.section.show(view);
       });
+
+      var lambdaCollection = new Collection();
+      lambdaCollection.fetch({data:account});
+      lambdaCollection.on('error', function() {
+      });
+      lambdaCollection.on('sync', function() {
+        this.models.forEach(function(model) {
+          model.set("account_id", account.id);
+        });
+        var awsAccountModel = AwsAccountModel.findOrCreate(account);
+        var asideView = new AsideView({
+          model: awsAccountModel,
+          collection: lambdaCollection
+        });
+        self.app.appLayout.aside.show(asideView);
+      });
+
     },
-    onRoute: function() {
+    onRoute: function(aid) {
     },
     findAccount: function(aid) {
       var account = null;
