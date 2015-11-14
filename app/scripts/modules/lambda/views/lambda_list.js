@@ -10,6 +10,8 @@ define([
   return Marionette.CompositeView.extend({
     template: listTmpl,
     childViewContainer: 'tbody',
-    childView: ChildView
+    childView: ChildView,
+    onRender: function() {
+    }
   });
 });

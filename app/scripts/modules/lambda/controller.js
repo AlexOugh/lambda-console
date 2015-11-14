@@ -37,9 +37,12 @@ function(
           model.set('account', account);
         });
         self.app.appLayout.hideAside();
-        self.app.appLayout.section.show(new LambdaListView({
+        var awsAccountModel = AwsAccountModel.findOrCreate(account);
+        var view = new LambdaListView({
+          model: awsAccountModel,
           collection: this
-        }));
+        })
+        self.app.appLayout.section.show(view);
       });
     },
     show: function(aid, id) {
