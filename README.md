@@ -7,5 +7,5 @@
 ## Architecture
   - UI : Cloudfront + S3
   - API : API Gateway + Lambda
-  - Authenticatio : IAM Roles & API Key
+  - Authentication : IAM Roles & API Key
   
