@@ -3,20 +3,24 @@ define([
   'underscore',
   'backbone',
   'baseApp',
+  './modules/default/singletons/session',
   'layouts/app',
   'modules/default/module',
   'modules/aws_account/module',
-  'modules/lambda/module'
+  'modules/lambda/module',
+  'HeaderGenerator'
 ],
 function(
   $,
   underscore,
   Backbone,
   BaseApp,
+  Session,
   AppLayout,
   DefaultsModule,
   AwsAccountModule,
-  LambdaModule
+  LambdaModule,
+  HeaderGenerator
 ) {
 
   var apiUrl = BaseApp.config.apiUrl;
@@ -57,7 +61,52 @@ function(
       withCredentials: false
     },
     beforeSend: function(xhr) {
-      xhr.setRequestHeader('x-api-key', BaseApp.config.apiKey);
+      console.log(arguments[1].url);
+      if (arguments[1].url === apiUrl + "/auth") {
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader('x-api-key', BaseApp.config.apiKey);
+      }
+      else {
+        this.setHeadersForIAM(arguments[1], xhr);
+      }
+    },
+    setHeadersForIAM: function(argument, xhr) {
+      var method = argument.type;
+
+      //Use the protocol and host components to build the canonical endpoint
+      var parser = document.createElement('a');
+      parser.href = apiUrl;
+      var endpoint = parser.protocol + parser.host;
+
+      var splitted = argument.url.replace(parser.protocol + "//" + parser.host, '').split('?');
+      var url = splitted[0];
+      var params = {};
+      if (splitted.length > 1 && splitted[1] != "") {
+        splitted[1].split('&').forEach(function(str) {
+          var kv = str.split('=');
+          params[kv[0]] = kv[1];
+        });
+      }
+
+      var body = '';
+      var accessKey = Session.get('AccessKeyId');
+      var secretKey = Session.get('SecretAccessKey');
+      var sessionToken = Session.get('SessionToken');
+      var region = BaseApp.config.region;
+      var headers = HeaderGenerator().generate(
+        method,
+        url,
+        params,
+        body,
+        endpoint,
+        accessKey,
+        secretKey,
+        sessionToken,
+        region
+      );
+      Object.keys(headers).forEach(function(key) {
+        xhr.setRequestHeader(key, headers[key]);
+      });
     }
   });
 

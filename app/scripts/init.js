@@ -57,6 +57,8 @@ require.config({
 
         baseApp: '../scripts/packages/base',
 
+        HeaderGenerator: '../../bower_components/headerGenerator/index'
+
     },
 
     packages: ['baseApp'],

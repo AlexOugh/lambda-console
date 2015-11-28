@@ -113,8 +113,12 @@ module.exports = function(grunt) {
       dist: {
         dest: "build/config.json",
         options: {
-          apiUrl: config.get('apiUrl'),
-          apiKey: config.get('apiKey'),
+          fedaccount : process.env.LAMBDA_CONSOLE_FED_ACCOUNT || config.get('fedaccount'),
+          role: process.env.LAMBDA_CONSOLE_ROLE || config.get('role'),
+          extid: process.env.LAMBDA_CONSOLE_EXT_ID || config.get('extid'),
+          region: process.env.LAMBDA_CONSOLE_REGION || config.get('region'),
+          apiUrl: process.env.LAMBDA_CONSOLE_API_URL || config.get('apiUrl'),
+          apiKey: process.env.LAMBDA_CONSOLE_API_KEY || config.get('apiKey'),
           accounts: config.get('accounts')
           //sgasAdminRole: config.get('sgasAdminRole')
         }
@@ -149,7 +153,7 @@ module.exports = function(grunt) {
     'sass',
     'copy:build',
     'connect:testserver',
-    'open',
+    //'open',
     'watch'
   ]);
 

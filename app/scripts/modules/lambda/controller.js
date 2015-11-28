@@ -31,7 +31,15 @@ function(
       var self = this;
 
       var account = this.findAccount(aid);
-      this.collection.fetch({data:account});
+      this.collection.fetch({
+        data:{
+          fedaccount: account.fedaccount,
+          account: account.account,
+          role: account.role,
+          extid: account.extid,
+          region: account.region
+        }
+      });
       this.collection.on('error', function() {
       });
       this.collection.on('sync', function() {
@@ -52,7 +60,15 @@ function(
       var account = this.findAccount(aid);
 
       var model = Model.findOrCreate({id:id});
-      model.fetch({data:account});
+      model.fetch({
+        data:{
+          fedaccount: account.fedaccount,
+          account: account.account,
+          role: account.role,
+          extid: account.extid,
+          region: account.region
+        }
+      });
       model.once('sync', function() {
         model.set('account', account);
         var view = new LambdaShowView({
@@ -63,7 +79,15 @@ function(
       });
 
       var lambdaCollection = new Collection();
-      lambdaCollection.fetch({data:account});
+      lambdaCollection.fetch({
+        data:{
+          fedaccount: account.fedaccount,
+          account: account.account,
+          role: account.role,
+          extid: account.extid,
+          region: account.region
+        }
+      });
       lambdaCollection.on('error', function() {
       });
       lambdaCollection.on('sync', function() {
