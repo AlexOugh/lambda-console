@@ -1,10 +1,10 @@
 module.exports = {
   fedaccount : "089476987273",
   role: 'sgas_dev_admin',
-  extid: '88df904d-c597-40ef-8b29-b767aba1eaa4',
+  extid: '',
   region: 'us-east-1',
-  apiUrl: "https://qp9oj9um7l.execute-api.us-east-1.amazonaws.com/dev",
-  apiKey: "HN4l49RbTfaiJvNkKYr2J6mY7NmVBPdl3Sp9bEIt",
+  apiUrl: "",
+  apiKey: "",
   accounts: [
     {
       id:"1",
@@ -13,7 +13,7 @@ module.exports = {
       name:"SGAS MSAWS Non-Prod",
       description:"Managed AWS Non-Production",
       role:"sgas_dev_admin",
-      extid:"88df904d-c597-40ef-8b29-b767aba1eaa4",
+      extid:"",
       region:"us-east-1"
     },
     {
@@ -23,7 +23,7 @@ module.exports = {
       name:"SGAS CTO Sandbox",
       description:"CTO development/poc/test",
       role:"sgas_dev_admin",
-      extid:"ccb6cfce-057c-4fbc-84b9-1ee10e8b6560",
+      extid:"",
       region:"us-east-1"
     },
     {
@@ -33,7 +33,7 @@ module.exports = {
       name:"CTO POC 2",
       description:"A second POC account",
       role:"sgas_dev_admin",
-      extid:"4e709cfd-e41b-4425-84cb-64461f23465c",
+      extid:"",
       region:"us-east-1"
     },
     {
@@ -43,7 +43,7 @@ module.exports = {
       name:"CTO Master Account",
       description:"Master Account for Consolidated Billing",
       role:"sgas_dev_admin",
-      extid:"0b6318ce-41ac-4774-87ae-2b6da44a78d1",
+      extid:"",
       region:"us-east-1"
     }
   ]
