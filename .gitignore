@@ -44,3 +44,4 @@ node_modules
 build
 dist
 config/local.js
+config/development.js
